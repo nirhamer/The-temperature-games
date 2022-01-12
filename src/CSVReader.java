@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class CSVReader {
     public static void main(String[] args) throws IOException {
         //gets filename
-        Scanner keyboard = new Scanner("C:\\Users\\nir\\Desktop/The temperature games.csv");
-        System.out.println("C:\\Users\\nir\\Desktop/The temperature games.csv");
+        //Scanner keyboard = new Scanner("C:\\Users\\nir\\Desktop/The temperature games.csv");
+        //System.out.println("C:\\Users\\nir\\Desktop/The temperature games.csv");
         String filename = "C:\\Users\\nir\\Desktop/The temperature games.csv";
 
 
@@ -15,11 +15,6 @@ public class CSVReader {
         //opens file
         File file = new File(filename);
         Scanner inputFile = new Scanner(file);
-
-        //variables
-        int val = 0;
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
 
         //to read all lines of file
         Integer lineCounter = 1;
@@ -32,9 +27,6 @@ public class CSVReader {
                 final String dateString = parts[-0];
                 final String minString = parts[1];
                 final String maxString = parts[2];
-
-
-
                 //System.out.println(lineCounter + " Date:" + dateString + " Min: " + minString + " max: " + maxString);
 
                 LocalDate date = LocalDate.parse(dateString);
