@@ -1,39 +1,45 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Random;
 import java.util.Scanner;
 
 public class test {
-    public static void main(String[] args) throws IOException {
-        String filename = "C:\\Users\\nir\\Desktop/The temperature games.csv";
+    //region define DTO
+        public static void  dTO() throws FileNotFoundException {
+            String filename = "C:\\Users\\nir\\Desktop/The temperature games.csv";
+            File file = new File(filename);
+            Scanner inputFile = new Scanner(file);
+            Integer lineCounter = 1;
+        }
+    //endregion
 
 
-
-        //opens file
-        File file = new File(filename);
-        Scanner inputFile = new Scanner(file);
-
-        //to read all lines of file
-        Integer lineCounter = 1;
+    //region define obtainData
+    public static void  obtainData(Scanner inputFile, Integer lineCounter) {
         while (inputFile.hasNext()) {
-
             final String currentLine = inputFile.nextLine();
             if (lineCounter != 1) {
                 String[] parts = currentLine.split(",");
+                final String dateString = parts[0];
+                final String minString = parts[1];
                 final String maxString = parts[2];
-
-
+                LocalDate date = LocalDate.parse(dateString);
+                double minimum = Double.parseDouble(minString);
                 double maximum = Double.parseDouble(maxString);
-
-                System.out.println(maximum);
+                System.out.printf("%s Min: %g, Max:%g\n", date.toString(), minimum, maximum);
             }
             lineCounter++;
         }
-        //Close file
-        inputFile.close();
-
-        //Print out the lowest value in the list and highest
-        //System.out.println("Min number is: " +min);
-        //System.out.println("Max number is: " +max);
     }
+    //endregion
+
+
+    //region define endProcess
+    public static void  closeFile(Scanner inputFile, Integer lineCounter){
+        inputFile.close();
+    }
+    //endregion
+
 }

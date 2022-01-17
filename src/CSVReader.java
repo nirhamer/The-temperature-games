@@ -8,6 +8,7 @@ public class CSVReader {
         //gets filename
         //Scanner keyboard = new Scanner("C:\\Users\\nir\\Desktop/The temperature games.csv");
         //System.out.println("C:\\Users\\nir\\Desktop/The temperature games.csv");
+        //region define DTO
         String filename = "C:\\Users\\nir\\Desktop/The temperature games.csv";
 
 
@@ -18,13 +19,14 @@ public class CSVReader {
 
         //to read all lines of file
         Integer lineCounter = 1;
+        //endregion
         while (inputFile.hasNext()) {
 
             final String currentLine = inputFile.nextLine();
             if (lineCounter != 1) {
                 String[] parts = currentLine.split(",");
                 //System.out.println(lineCounter + " " + currentLine);
-                final String dateString = parts[-0];
+                final String dateString = parts[0];
                 final String minString = parts[1];
                 final String maxString = parts[2];
                 //System.out.println(lineCounter + " Date:" + dateString + " Min: " + minString + " max: " + maxString);
