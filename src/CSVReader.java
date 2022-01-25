@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CSVReader {
@@ -9,6 +11,7 @@ public class CSVReader {
         File file = new File(filename);
         Scanner inputFile = new Scanner(file);
         int lineCounter = 1;
+        //List<DataPointDto> file = new ArrayList<>();
         while (inputFile.hasNext()) {
             final String currentLine = inputFile.nextLine();
             if (lineCounter != 1) {
@@ -19,6 +22,11 @@ public class CSVReader {
                 LocalDate date = LocalDate.parse(dateString);
                 double minimum = Double.parseDouble(minString);
                 double maximum = Double.parseDouble(maxString);
+                DataPointDto thisDataPoint = new DataPointDto();
+                thisDataPoint.date = date;
+                thisDataPoint.minimum = minimum;
+                thisDataPoint.maximum = maximum;
+                //file.add(thisDataPoint);
                 System.out.printf("%s Min: %g, Max:%g\n", date.toString(), minimum,maximum);
             }
             // TOD print our real representation
