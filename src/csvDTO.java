@@ -4,9 +4,9 @@ import java.util.List;
 public class csvDTO {
 
     // Member variables of class
-    private List max;
-    private List min;
-    private List avg;
+    public List max;
+    public List min;
+    public List avg;
 
 
     // Creating a constructor of the class

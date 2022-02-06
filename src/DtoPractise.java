@@ -44,8 +44,6 @@ public class DtoPractise {
 
             index1 = line1.split(",")[0];
             index2 = line2.split(",")[0];
-            //System.out.println(index1 + "\t" + index2);
-
             file1Data.add(Integer.parseInt(index1));
             file2Data.add(Integer.parseInt(index2));
 
