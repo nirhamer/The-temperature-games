@@ -9,12 +9,11 @@ import java.util.Collections;
 public class findMaxMin {
     public static void main(String[] args) throws IOException {
         BufferedReader bufReader = new BufferedReader(new FileReader("C:\\Users\\nir\\Desktop/file1.txt"));
-        ArrayList<String> listOfLines = new ArrayList<>();
-
-        String line = bufReader.readLine();
-        while (line != null) {
-            listOfLines.add(line);
-            line = bufReader.readLine();
+        ArrayList<Double> listOfLines = new ArrayList<>();
+        String line;
+        while ((line = bufReader.readLine()) != null) {
+            double lineString = Double.parseDouble(line);
+            listOfLines.add(lineString);
         }
         System.out.println( "ArrayList Min Value: " + Collections.min(listOfLines) );
         System.out.println( "ArrayList Max Value: " + Collections.max(listOfLines) );
