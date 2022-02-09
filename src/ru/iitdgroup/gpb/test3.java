@@ -1,3 +1,5 @@
+package ru.iitdgroup.gpb;
+
 import java.util.Random;
 
 public class test3 {

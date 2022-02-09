@@ -1,3 +1,5 @@
+package ru.iitdgroup.gpb;
+
 public class DtoStage2 {
     String data;
 

@@ -1,3 +1,5 @@
+package ru.iitdgroup.gpb;
+
 import java.time.LocalDate;
 
 public class DataPointDto {

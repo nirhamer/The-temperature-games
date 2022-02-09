@@ -1,3 +1,5 @@
+package ru.iitdgroup.gpb;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -28,10 +30,21 @@ public class CSVReader {
                 thisDataPoint.maximum = maximum;
                 System.out.printf("%s Min: %g, Max:%g\n", date.toString(), minimum, maximum);
                 fileLInes.add(thisDataPoint);
+                System.out.println(date.getMonth());
             }
             lineCounter++;
         }
         //Close file
         inputFile.close();
+
+
+
+
+
+
+
+
+
+        //TODO find min and max using only DTO do not use csv file
     }
 }
