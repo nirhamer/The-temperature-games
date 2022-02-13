@@ -1,4 +1,4 @@
-package ru.iitdgroup.gpb;
+package ru.iitdgroup.temperaturegames;
 
 public class DtoStage2 {
     String data;

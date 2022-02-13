@@ -1,10 +1,6 @@
-package ru.iitdgroup.gpb;
+package ru.iitdgroup.temperaturegames;
 
-import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class identifySeries {
     public static void main(String[] args) {

@@ -1,6 +1,7 @@
-package ru.iitdgroup.gpb;
+package ru.iitdgroup.temperaturegames;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,7 +11,13 @@ import java.util.Scanner;
 public class CSVReader {
     public static void main(String[] args) throws IOException {
         String filename = "C:\\Users\\nir\\Desktop/The temperature games.csv";
-        File file = new File(filename);
+
+        final List<DataPointDto> dataPointDto = doReadCsv(filename);
+        doPoint1(dataPointDto);
+    }
+
+    public static List<DataPointDto> doReadCsv( String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
         Scanner inputFile = new Scanner(file);
         int lineCounter = 1;
         List<DataPointDto> fileLInes = new ArrayList<>();
@@ -36,15 +43,10 @@ public class CSVReader {
         }
         //Close file
         inputFile.close();
+        return fileLInes;
+    }
 
+    public static void doPoint1(List<DataPointDto> dataPointDto){
 
-
-
-
-
-
-
-
-        //TODO find min and max using only DTO do not use csv file
     }
 }

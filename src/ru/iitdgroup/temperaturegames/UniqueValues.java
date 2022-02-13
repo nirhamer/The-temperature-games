@@ -1,4 +1,4 @@
-package ru.iitdgroup.gpb;
+package ru.iitdgroup.temperaturegames;
 
 import java.io.File;
 import java.io.FileNotFoundException;
