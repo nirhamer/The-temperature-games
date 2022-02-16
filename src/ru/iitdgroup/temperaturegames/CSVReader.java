@@ -47,6 +47,6 @@ public class CSVReader {
     }
 
     public static void doPoint1(List<DataPointDto> dataPointDto){
-
+        
     }
 }
