@@ -36,3 +36,6 @@ public class Fizz {
 //14 -> 14
 //15 -> "FizzBuzz"
 //16 -> 16
+
+
+//TODO recreate the multiplication table like in the image via programing
