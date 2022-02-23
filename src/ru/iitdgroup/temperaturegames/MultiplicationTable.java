@@ -1,35 +1,12 @@
 package ru.iitdgroup.temperaturegames;
 
-public class MultiplicationTable
-{
-    public static void main(String[] args)
-    {
-        final int tableNum = 10;
-        System.out.print("   |");
-        for(int a = 1; a <= tableNum; a++)
-            System.out.print(addSpace(a) + " ");
-        System.out.println();
-        System.out.print("---");
-        for(int a = 1; a <= tableNum; a++)
-            System.out.print("----");
-        System.out.println();
-        for(int a = 1; a <= tableNum; a++)
-        {
-            System.out.print(addSpace(a) + "|");
-            for(int b = 1; b <= tableNum; b++)
-            {
-                System.out.print(addSpace(a * b) + " ");
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        for (int line = 1; line <= 10; line++) {
+            for (int i = 1; i <= 10; i += 1) {
+                System.out.print(i + "x" + line + "=" + (i * line) + "\t");
             }
             System.out.println();
         }
-    }
-
-    public static String addSpace(int y)
-    {
-        String str;
-        if(y < 10) str = "  " + y;
-        else if(y < 100) str = " " + y;
-        else str = "" + y;
-        return str;
     }
 }
