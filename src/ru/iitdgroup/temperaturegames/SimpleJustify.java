@@ -2,9 +2,19 @@ package ru.iitdgroup.temperaturegames;
 
 public class SimpleJustify {
     public static void main(String[] args) {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
+            partOne();
+            System.out.println();
             partTwo();
-            System.out.println("\n");
+        }
+    }
+
+    public static void partOne() {
+        String text = "Sabers have a base damage multiplier of 1.0x.";
+        String[] separated = text.split(" ");
+        for (String word : separated) {
+            System.out.println(word);
+
         }
     }
 
