@@ -2,19 +2,19 @@ package ru.iitdgroup.temperaturegames;
 
 public class SimpleJustify {
     public static void main(String[] args) {
-        for (int i = 0; i < 1; i++) {
-            partOne();
-            System.out.println();
-            partTwo();
-        }
+        partOne();
+        System.out.println();
+        partTwo();
     }
+
+    //TODO move out lines 16 and 17 outside of the methods
+    //TODO create step 3 use find longest element helper function
 
     public static void partOne() {
         String text = "Sabers have a base damage multiplier of 1.0x.";
         String[] separated = text.split(" ");
         for (String word : separated) {
             System.out.println(word);
-
         }
     }
 
