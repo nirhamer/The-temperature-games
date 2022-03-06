@@ -9,9 +9,6 @@ public class SimpleJustify {
         partThree();
     }
 
-    //TODO move out lines 16 and 17 outside of the methods
-
-
     public static void partOne() {
         String text = "Sabers have a base damage multiplier of 1.0x.";
         String[] separated = text.split(" ");
@@ -35,12 +32,10 @@ public class SimpleJustify {
         String[] separated = text.split(" ");
         int maxLen = findLongestElement(separated);
         for (String word : separated) {
-            System.out.println(getSpaces(word, maxLen - 2) + word);
+            System.out.println(getSpacesCenter(word, maxLen) + word);
 
         }
     }
-
-
 
     private static int findLongestElement(String[] separated) {
         int max = 0;
@@ -55,6 +50,16 @@ public class SimpleJustify {
 
     private static String getSpaces(String word, int maxLen) {
         int difference = maxLen - word.length();
+        String a = "";
+        for (int i = 0; i < difference; i++) {
+            a = a + " ";
+        }
+        return a;
+    }
+
+    private static String getSpacesCenter(String word, int maxLen) {
+        int difference = maxLen - word.length();
+        difference = difference / 2;
         String a = "";
         for (int i = 0; i < difference; i++) {
             a = a + " ";
