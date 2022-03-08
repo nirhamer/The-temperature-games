@@ -2,38 +2,33 @@ package ru.iitdgroup.temperaturegames;
 
 public class SimpleJustify {
     public static void main(String[] args) {
-        partOne();
-        System.out.println();
-        partTwo();
-        System.out.println();
-        partThree();
-    }
-
-    public static void partOne() {
         String text = "Sabers have a base damage multiplier of 1.0x.";
         String[] separated = text.split(" ");
+
+        partOne(separated);
+        System.out.println();
+        partTwo(separated);
+        System.out.println();
+        partThree(separated);
+    }
+
+    public static void partOne(String[] separated) {
         for (String word : separated) {
             System.out.println(word);
         }
     }
 
-    public static void partTwo() {
-        String text = "Sabers have a base damage multiplier of 1.0x.";
-        String[] separated = text.split(" ");
+    public static void partTwo(String[] separated) {
         int maxLen = findLongestElement(separated);
         for (String word : separated) {
             System.out.println(getSpaces(word, maxLen, Alignment.RIGHT) + word);
-
         }
     }
 
-    public static void partThree() {
-        String text = "Sabers have a base damage multiplier of 1.0x.";
-        String[] separated = text.split(" ");
+    public static void partThree(String[] separated) {
         int maxLen = findLongestElement(separated);
         for (String word : separated) {
             System.out.println(getSpaces(word, maxLen, Alignment.CENTER) + word);
-
         }
     }
 
@@ -49,7 +44,7 @@ public class SimpleJustify {
     }
 
     private static String getSpaces(String word, int maxLen, Alignment alignment) {
-        int difference ;
+        int difference;
         final int temp = maxLen - word.length();
         switch (alignment) {
             case LEFT:
@@ -63,7 +58,7 @@ public class SimpleJustify {
                 break;
             default:
                 difference = 0;
-                System.err.println("Unknown alignment "+alignment);
+                System.err.println("Unknown alignment " + alignment);
         }
         String a = "";
         for (int i = 0; i < difference; i++) {
