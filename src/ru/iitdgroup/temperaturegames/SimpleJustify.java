@@ -22,7 +22,7 @@ public class SimpleJustify {
         String[] separated = text.split(" ");
         int maxLen = findLongestElement(separated);
         for (String word : separated) {
-            System.out.println(getSpaces(word, maxLen) + word);
+            System.out.println(getSpaces(word, maxLen, Alignment.RIGHT) + word);
 
         }
     }
@@ -32,7 +32,7 @@ public class SimpleJustify {
         String[] separated = text.split(" ");
         int maxLen = findLongestElement(separated);
         for (String word : separated) {
-            System.out.println(getSpacesCenter(word, maxLen) + word);
+            System.out.println(getSpaces(word, maxLen, Alignment.CENTER) + word);
 
         }
     }
@@ -48,8 +48,19 @@ public class SimpleJustify {
         return max;
     }
 
-    private static String getSpaces(String word, int maxLen) {
+    private static String getSpaces(String word, int maxLen, Alignment alignment) {
         int difference = maxLen - word.length();
+        switch (alignment) {
+            case LEFT:
+                difference = 0;
+                break;
+            case RIGHT:
+                difference = maxLen - word.length();
+                break;
+            case CENTER:
+                difference = difference / 2;
+                break;
+        }
         String a = "";
         for (int i = 0; i < difference; i++) {
             a = a + " ";
@@ -57,13 +68,7 @@ public class SimpleJustify {
         return a;
     }
 
-    private static String getSpacesCenter(String word, int maxLen) {
-        int difference = maxLen - word.length();
-        difference = difference / 2;
-        String a = "";
-        for (int i = 0; i < difference; i++) {
-            a = a + " ";
-        }
-        return a;
+    enum Alignment {
+        LEFT, RIGHT, CENTER
     }
 }
