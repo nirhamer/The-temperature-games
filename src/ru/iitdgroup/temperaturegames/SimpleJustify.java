@@ -49,17 +49,21 @@ public class SimpleJustify {
     }
 
     private static String getSpaces(String word, int maxLen, Alignment alignment) {
-        int difference = maxLen - word.length();
+        int difference ;
+        final int temp = maxLen - word.length();
         switch (alignment) {
             case LEFT:
                 difference = 0;
                 break;
             case RIGHT:
-                difference = maxLen - word.length();
+                difference = temp;
                 break;
             case CENTER:
-                difference = difference / 2;
+                difference = (temp) / 2;
                 break;
+            default:
+                difference = 0;
+                System.err.println("Unknown alignment "+alignment);
         }
         String a = "";
         for (int i = 0; i < difference; i++) {
