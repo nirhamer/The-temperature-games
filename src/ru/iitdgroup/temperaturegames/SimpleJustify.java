@@ -2,33 +2,38 @@ package ru.iitdgroup.temperaturegames;
 
 public class SimpleJustify {
     public static void main(String[] args) {
-        String text = "Sabers have a base damage multiplier of 1.0x.";
-        String[] separated = text.split(" ");
-
-        partOne(separated);
+        partOne();
         System.out.println();
-        partTwo(separated);
+        partTwo();
         System.out.println();
-        partThree(separated);
+        partThree();
     }
 
-    public static void partOne(String[] separated) {
+    public static void partOne() {
+        String text = "Sabers have a base damage multiplier of 1.0x.";
+        String[] separated = text.split(" ");
+        int maxLen = findLongestElement(separated);
         for (String word : separated) {
-            System.out.println(word);
+            System.out.println(getSpaces(word, maxLen, Alignment.LEFT) + word);
         }
     }
 
-    public static void partTwo(String[] separated) {
+    public static void partTwo() {
+        String text = "Sabers have a base damage multiplier of 1.0x.";
+        String[] separated = text.split(" ");
         int maxLen = findLongestElement(separated);
         for (String word : separated) {
             System.out.println(getSpaces(word, maxLen, Alignment.RIGHT) + word);
         }
     }
 
-    public static void partThree(String[] separated) {
+    public static void partThree() {
+        String text = "Sabers have a base damage multiplier of 1.0x.";
+        String[] separated = text.split(" ");
         int maxLen = findLongestElement(separated);
         for (String word : separated) {
             System.out.println(getSpaces(word, maxLen, Alignment.CENTER) + word);
+
         }
     }
 
@@ -58,7 +63,7 @@ public class SimpleJustify {
                 break;
             default:
                 difference = 0;
-                System.err.println("Unknown alignment " + alignment);
+                System.err.println("Unknown alignment "+alignment);
         }
         String a = "";
         for (int i = 0; i < difference; i++) {
