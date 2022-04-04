@@ -19,29 +19,31 @@ public class Arrays {
         return array;
     }
 
-    public static void partOne() {
-        for (int i : (new int[]{3, 6, 84, 3, 4, 5, -1, -20}))
-            System.out.println(i);
+    public static void partOne(int[] sources) {
+        for (int i : sources)
+            System.out.print(i + " ");
     }
 
 
-    public static void partTwo() {
-        for (int i : swap(new int[]{3, 6, 84, 3, 4, 5, -1, -20}))
-            System.out.println(i);
+    public static void partTwo(int[] sources) {
+        for (int i : swap(sources))
+            System.out.print(i + " ");
     }
 
-    public static void partThree() {
-        for (int i : (new int[]{3, 6, 84, 3, 4, 5, -1, -20}))
+    public static void partThree(int[] sources) {
+        for (int i : sources)
             if (i % 2 == 0) {
-                System.out.println("The integer number you entered " + i + " is divisible by 2 ");
+                System.out.print(i + " ");
             }
     }
 
     public static void main(String[] args) {
-        partOne();
+        int[] i = new int[]{3, 6, 84, 3, 4, 5, -1, -20};
+
+        partOne(i);
         System.out.println();
-        partTwo();
+        partTwo(i);
         System.out.println();
-        partThree();
+        partThree(i);
     }
 }
