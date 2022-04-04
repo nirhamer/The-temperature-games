@@ -5,10 +5,10 @@ public class Justify {
 
     public static void main(String[] args) {
         partOne();
-        System.out.println();
-        partTwo();
-        System.out.println();
-        partThree();
+        //System.out.println();
+        //partTwo();
+        //System.out.println();
+        //partThree();
     }
 
 
@@ -25,7 +25,7 @@ public class Justify {
             String word = words[i];
             if (line.length() + word.length() > 40) {
                 //System.out.println(line.length());
-                System.out.println((getSpaces(line, 40, Alignment.CENTER)) + line);
+                System.out.println((getSpaces(line, 40, Alignment.LEFT)) + line);
                 line = new StringBuilder();
             }
             line.append(word);
