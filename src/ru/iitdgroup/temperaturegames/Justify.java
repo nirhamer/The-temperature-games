@@ -32,7 +32,11 @@ public class Justify {
             if (line.length() < 40) {
                 // do not add spaces if the next word will not fit into the line
                 // not fit into the line means that the line + space + the next word will be grater than 40
-                line.append(" ");
+
+                if (!(line.length() +1 + words[i + 1].length() >= 40)) {
+                    line.append(" ");
+                    //fix current error
+                }
             }
         }
     }
@@ -49,7 +53,7 @@ public class Justify {
         for (String word : words) {
             if (line.length() + word.length() > 40) {
                 //System.out.println(line.length());
-                System.out.println((getSpaces(line,40,Alignment.RIGHT)) + line);
+                System.out.println((getSpaces(line, 40, Alignment.RIGHT)) + line);
                 line = new StringBuilder();
             }
             line.append(word);
@@ -72,7 +76,7 @@ public class Justify {
         for (String word : words) {
             if (line.length() + word.length() > 40) {
                 //System.out.println(line.length());
-                System.out.println((getSpaces(line,40,Alignment.CENTER)) + line);
+                System.out.println((getSpaces(line, 40, Alignment.CENTER)) + line);
                 line = new StringBuilder();
             }
             line.append(word);
